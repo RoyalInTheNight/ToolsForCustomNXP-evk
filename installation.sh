@@ -20,6 +20,7 @@ then
     fi
 
     cp gpioset /bin
+    cd ../../
 
 else
     echo "[FAILED]Missing libgpiod...\n"
