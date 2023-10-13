@@ -2,7 +2,7 @@
 
 if [ -e libgpiod ]
 then
-    echo "[ INFO ]Install libgpiod...\n"
+    echo "[ INFO ]Install libgpiod..."
     cd libgpiod
     sh autogen.sh
     make
@@ -12,10 +12,10 @@ then
 
     if [ -e gpioset ]
     then
-        echo "[ INFO ]GPIO tool compiled\n"
+        echo "[ INFO ]GPIO tool compiled"
 
     else
-        echo "[FAILED]GPIO tool compile error\n"
+        echo "[FAILED]GPIO tool compile error"
 
     fi
 
@@ -23,19 +23,19 @@ then
     cd ../../
 
 else
-    echo "[FAILED]Missing libgpiod...\n"
+    echo "[FAILED]Missing libgpiod..."
 
 fi
 
 if [ -e tools ]
 then
-    echo "[ INFO ]Finded boot module tools\n"
+    echo "[ INFO ]Finded boot module tools"
 
     mkdir -p /usr/local
 
     cp -r tools/ /usr/local/
 
 else
-    echo "[FAILED]Missing boot module tools\n"
+    echo "[FAILED]Missing boot module tools"
 
 fi
