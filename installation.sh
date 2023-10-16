@@ -39,3 +39,22 @@ else
     echo "[FAILED]Missing boot module tools"
 
 fi
+
+if [ -e boot_daemon.service ]
+then
+  echo "[ INFO ]Install boot_daemon.service"
+
+  cp boot_daemon.service /lib/systemd/system/boot_daemon.service
+
+  if [ -e /lib/systemd/system/boot_daemon.service ]
+  then
+    echo "[  OK  ]Service installed"
+
+  else
+    echo "[FAILED]Service don't installed"
+
+  fi
+else
+  echo "[FAILED]Missing service"
+
+fi
