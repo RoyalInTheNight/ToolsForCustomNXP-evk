@@ -54,6 +54,7 @@ then
     echo "[FAILED]Service don't installed"
 
   fi
+
 else
   echo "[FAILED]Missing service"
 
