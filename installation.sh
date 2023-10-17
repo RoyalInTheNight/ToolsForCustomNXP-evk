@@ -19,7 +19,7 @@ then
 
     fi
 
-    cp gpioset /bin
+    cp gpio* /bin
     cd ../../
 
 else
