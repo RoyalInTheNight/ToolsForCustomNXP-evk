@@ -1,5 +1,10 @@
 #!/bin/bash
 
+apt install autoconf-archive nlohmann-json3-dev
+
+rm -rf libgpiod/
+git clone https://github.com/brgl/libgpiod.git
+
 if [ -e libgpiod ]
 then
     echo "[ INFO ]Install libgpiod..."
@@ -34,6 +39,8 @@ then
     mkdir -p /usr/local
 
     cp -r tools/ /usr/local/
+
+    chmod 777 /usr/local/tools/*
 
 else
     echo "[FAILED]Missing boot module tools"
