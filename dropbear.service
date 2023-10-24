@@ -1,0 +1,13 @@
+# /usr/lib/systemd/system/dropbear.service
+[Unit]
+Description=Dropbear SSH Server Daemon
+Documentation=man:dropbear(8)
+Wants=dropbear-keygen.service
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/sysconfig/dropbear
+ExecStart=/usr/sbin/dropbear -R -E -F $OPTIONS
+
+[Install]
+WantedBy=multi-user.target
