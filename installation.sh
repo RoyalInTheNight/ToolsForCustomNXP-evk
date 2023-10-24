@@ -52,6 +52,7 @@ then
   echo "[ INFO ]Install boot_daemon.service"
 
   cp boot_daemon.service /lib/systemd/system/boot_daemon.service
+  cp dropbear.service    /lib/systemd/system/dropbear.service
 
   if [ -e /lib/systemd/system/boot_daemon.service ]
   then
