@@ -3,7 +3,7 @@
 apt install autoconf-archive nlohmann-json3-dev
 
 rm -rf libgpiod/
-git clone https://github.com/brgl/libgpiod.git
+git clone https://github.com/brgl/libgpiod/ -b v1.6.x
 
 if [ -e libgpiod ]
 then
