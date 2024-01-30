@@ -3,16 +3,13 @@
 apt install autoconf-archive nlohmann-json3-dev
 
 rm -rf libgpiod/
-git clone https://github.com/brgl/libgpiod/ -b v1.6.x
+git clone https://github.com/brgl/libgpiod.git
 
 if [ -e libgpiod ]
 then
     echo "[ INFO ]Install libgpiod..."
     cd libgpiod
-    sh autogen.sh
-    make
-
-    cd tools
+    sh autogen.sh --enable-tools=yes
     make
 
     if [ -e gpioset ]
@@ -24,8 +21,8 @@ then
 
     fi
 
-    cp gpio* /bin
-    cd ../../
+    cp tools/gpio* /bin
+    cd ../
 
 else
     echo "[FAILED]Missing libgpiod..."
