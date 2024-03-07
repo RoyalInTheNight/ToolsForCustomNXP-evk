@@ -3,23 +3,23 @@
 apt install autoconf-archive nlohmann-json3-dev
 
 rm -rf libgpiod/
-git clone https://github.com/brgl/libgpiod.git
+# git clone https://github.com/brgl/libgpiod.git
 
 if [ -e libgpiod ]
 then
     echo "[ INFO ]Install libgpiod..."
-    cd libgpiod
-    sh autogen.sh --enable-tools=yes
-    make
+    # cd libgpiod
+    # sh autogen.sh --enable-tools=yes
+    # make
 
-    if [ -e gpioset ]
-    then
-        echo "[ INFO ]GPIO tool compiled"
+    # if [ -e gpioset ]
+    # then
+    #    echo "[ INFO ]GPIO tool compiled"
 
-    else
-        echo "[FAILED]GPIO tool compile error"
+    # else
+    #    echo "[FAILED]GPIO tool compile error"
 
-    fi
+    # fi
 
     cp tools/gpio* /bin
     cd ../
