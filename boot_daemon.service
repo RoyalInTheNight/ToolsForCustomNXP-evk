@@ -3,7 +3,7 @@ Description=BOOT net modules
 Wants=multi-user.target
 
 [Service]
-ExecStart=/usr/local/tools/boot.sh
+ExecStart=/usr/local/tools/boot
 
 [Install]
 WantedBy=multi-user.target

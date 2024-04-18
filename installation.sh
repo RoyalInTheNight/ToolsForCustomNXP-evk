@@ -29,15 +29,15 @@ else
 
 fi
 
-if [ -e tools ]
+if [ -e gpio.cpp ]
 then
     echo "[ INFO ]Finded boot module tools"
 
     mkdir -p /usr/local
 
-    cp -r tools/ /usr/local/
+    cp boot /usr/local/tools
 
-    chmod 777 /usr/local/tools/*
+    chmod 777 /usr/local/tools/boot
 
 else
     echo "[FAILED]Missing boot module tools"
