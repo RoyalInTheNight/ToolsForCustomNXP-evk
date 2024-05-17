@@ -81,5 +81,3 @@ fi
 echo "[ INFO ]i.MX reboot..."
 
 sleep 1
-
-reboot
