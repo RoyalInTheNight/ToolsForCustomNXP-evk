@@ -2,6 +2,19 @@
 
 apt install autoconf-archive nlohmann-json3-dev
 
+caam-keygen create randomkeyCCM ccm -s 24
+caam-keygen create randomkey ecb -s 16
+
+cat /data/caam/randomkey | keyctl padd logon logkey: @s
+losetup /dev/loop0 /dev/mmcblk2p4
+dmsetup -v create encrypted --table "0 $(blockdev --getsz /dev/loop0) crypt capi:tk(cbc(aes))-plain :36:logon:logkey: 0 /dev/loop0 0 1 sector_size:512"
+mkfs.ext4 /dev/mapper/encrypted
+mkdir /mnt/encrypted
+mount -t ext4 /dev/mapper/encrypted /mnt/encrypted/
+
+umount /mnt/encrypted/
+dmsetup remove encrypted
+
 rm -rf libgpiod/
 # git clone https://github.com/brgl/libgpiod.git
 
@@ -64,3 +77,9 @@ else
   echo "[FAILED]Missing service"
 
 fi
+
+echo "[ INFO ]i.MX reboot..."
+
+sleep 1
+
+reboot
